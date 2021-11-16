@@ -98,10 +98,11 @@ def get_route(hostname):
 
                 icmph = recvPacket[20:28]
                 types, code, checksum, packetID, sq = struct.unpack("bbHHh", icmph)
-                host_ip = addr[0]
+                
                 try:
 
-                    dest = gethostbyname(host_ip)
+                    dest = gethostbyname(hostname)
+
 
                 except herror:
 
@@ -112,21 +113,21 @@ def get_route(hostname):
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
-                    tracelist1.append([ttl, str(int(rtt)) + 'ms', dest, hostname])
+                    tracelist1.append([ttl, str(int(rtt)) + 'ms', hostname])
                     tracelist2.append(tracelist1)
 
                 elif types == 3:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
-                    tracelist1.append([ttl, str(int(rtt)) + 'ms', dest, hostname])
+                    tracelist1.append([ttl, str(int(rtt)) + 'ms', hostname])
                     tracelist2.append(tracelist1)
 
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
-                    tracelist1.append([ttl, str(int(rtt)) + 'ms', dest, hostname])
+                    tracelist1.append([ttl, str(int(rtt)) + 'ms',hostname])
                     tracelist2.append(tracelist1)
                     if packetID == ID:
                         return tracelist2

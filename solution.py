@@ -102,8 +102,8 @@ def get_route(hostname):
                 try:
 
                     dest = gethostbyname(host_ip)
-                    tracelist1.appened(str(host_ip)) + "(" + str(dest[0]) + ")"
-                    tracelist2.appened(tracelist1)
+                    tracelist1.append(str(host_ip)) + "(" + str(dest[0]) + ")"
+                    tracelist2.append(tracelist1)
 
                 except herror:
 

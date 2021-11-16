@@ -38,7 +38,7 @@ def checksum(string):
 
 def build_packet():
     myChecksum = 0
-    ID = os.getoid() & 0xffffffff
+    ID = os.getpid() & 0xffffffff
     header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, myChecksum, ID, 1)
 
     data = struct.pack("d", time.time())

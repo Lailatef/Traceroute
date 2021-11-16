@@ -70,6 +70,7 @@ def get_route(hostname):
 
             mySocket.setsockopt(IPPROTO_IP, IP_TTL, struct.pack('I', ttl))
             mySocket.settimeout(TIMEOUT)
+            
             try:
                 d = build_packet()
                 mySocket.sendto(d, (hostname, 0))
@@ -97,10 +98,10 @@ def get_route(hostname):
 
                 icmph = recvPacket[20:28]
                 types, code, checksum, packetID, sq = struct.unpack("bbHHh", icmph)
-
+                host_ip = addr[0]
                 try:
 
-                    dest = gethostbyname(hostname)
+                    dest = gethostbyname(host_ip)
 
                 except herror:
 

@@ -98,15 +98,16 @@ def get_route(hostname):
 
                 icmph = recvPacket[20:28]
                 types, code, checksum, packetID, sq = struct.unpack("bbHHh", icmph)
-                
+                host_ip = addr[0]
                 try:
 
-                    dest = gethostbyname(hostname)
-
+                    dest = gethostbyname(host_ip)
+                    tracelist1.appened(str(host_ip)) + "(" + str(dest[0]) + ")"
+                    tracelist2.appened(tracelist1)
 
                 except herror:
 
-                    tracelist1.append("Hostname not returnable")
+                    tracelist1.append(str(host_ip("Hostname not returnable")))
                     tracelist2.append(tracelist1)
 
                 if types == 11:

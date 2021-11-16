@@ -98,10 +98,10 @@ def get_route(hostname):
 
                 icmph = recvPacket[20:28]
                 types, code, checksum, packetID, sq = struct.unpack("bbHHh", icmph)
-                
+                host_ip = addr[0]
                 try:
 
-                    dest = gethostbyaddr(addr[0])
+                    dest = gethostbyaddr(host_ip)
                     
 
                 except herror:

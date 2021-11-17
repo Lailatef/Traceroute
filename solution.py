@@ -98,10 +98,12 @@ def get_route(hostname):
 
                 icmph = recvPacket[20:28]
                 types, code, checksum, packetID, sq = struct.unpack("bbHHh", icmph)
-
+                
                 try:
 
-                    dest = gethostbyaddr(addr[0])
+                    host = gethostbyaddr(addr[0])
+                    dest = str(host[0])
+                    
                     
                 
 

@@ -104,12 +104,9 @@ def get_route(hostname):
                     dest = gethostbyaddr(addr[0])[0]
                     
                     
-                    
-                
-
                 except herror:
                     
-                    dest = ("Hostname not returnable")
+                    dest = ["Hostname not returnable"]
                     
 
 

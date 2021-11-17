@@ -101,8 +101,8 @@ def get_route(hostname):
 
                 try:
 
-                    dest = gethostbyaddr(addr[0])
-                    hostname = dest[0]
+                    hostname = gethostbyaddr(addr[0])
+                    
                 
 
                 except herror:

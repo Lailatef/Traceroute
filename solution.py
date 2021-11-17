@@ -101,8 +101,10 @@ def get_route(hostname):
                 host_ip = addr[0]
                 try:
 
-                    dest = gethostbyaddr(host_ip)
-                    
+                   dest = gethostbyaddr(host_ip)
+                
+                    tracelist1.append("Hostname not returnable")
+                    tracelist2.append(tracelist1)
 
                 except herror:
 

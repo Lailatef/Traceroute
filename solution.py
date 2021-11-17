@@ -134,7 +134,7 @@ def get_route(hostname):
 
                 else:
                     rtt = (timeReceived - timeSent) * 1000
-                    tracelist1.append([ttl, str(int(rtt)) + 'ms', dest, "types is not 0,3 or 11"])
+                    tracelist1.append([ttl, str(int(rtt)) + 'ms', str(addr[0], "types is not 0,3 or 11"])
                     tracelist2.append(tracelist1)
 
                 break

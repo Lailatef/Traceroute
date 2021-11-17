@@ -104,10 +104,11 @@ def get_route(hostname):
                     dest = gethostbyname(addr[0])
                 
 
-               except herror:
+                except herror:
+                    
                      tracelist1.append("Hostname not returnable")
                      tracelist2.append(tracelist1)
-                    
+
 
                 if types == 11:
                     bytes = struct.calcsize("d")

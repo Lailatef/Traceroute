@@ -109,7 +109,6 @@ def get_route(hostname):
                     dest = ["Hostname not returnable"]
                     
 
-
                 if types == 11:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]

@@ -133,8 +133,8 @@ def get_route(hostname):
 
                 else:
                     print('Error')
+                    
                   
-
                 break
             finally:
                 mySocket.close()

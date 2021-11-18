@@ -64,7 +64,6 @@ def get_route(hostname):
         tracelist1 = []
         tracelist1.append(str(ttl))
         for tries in range(TRIES):
-            
             destAddr = gethostbyname(hostname)
 
             icmp = getprotobyname("icmp")
@@ -136,7 +135,7 @@ def get_route(hostname):
                     tracelist1.append(str(addr[0]))
                     tracelist1.append(str(dest))
                     tracelist2.append(tracelist1)
-                    if packetID == ID:
+                    
                         return tracelist2
 
                 else:
@@ -150,5 +149,7 @@ def get_route(hostname):
                 break
             finally:
                 mySocket.close()
+                
+    return tracelist2
                 
 

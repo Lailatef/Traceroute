@@ -114,21 +114,20 @@ def get_route(hostname):
                     rtt = (timeReceived - timeSent) * 1000
                     tracelist1.append([str(ttl), str(int(rtt)) + 'ms', str(addr[0]), dest])
                     tracelist2.append(tracelist1)
-                    tracelist1.clear()
+                    
                 elif types == 3:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
                     tracelist1.append([str(ttl), str(int(rtt)) + 'ms', str(addr[0]), dest])
                     tracelist2.append(tracelist1)
-                    tracelist1.clear()
+                   
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
                     tracelist1.append([str(ttl), str(int(rtt)) + 'ms', str(addr[0]), dest])
                     tracelist2.append(tracelist1)
-                    tracelist1.clear()
                     if packetID == ID:
                         return tracelist2
 
@@ -136,7 +135,7 @@ def get_route(hostname):
                     rtt = (timeReceived - timeSent) * 1000
                     tracelist1.append([str(ttl), str(int(rtt)) + 'ms', dest, "types is not 0,3 or 11"])
                     tracelist2.append(tracelist1)
-                    tracelist1.clear()
+                  
 
                 break
             finally:

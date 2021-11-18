@@ -115,7 +115,7 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
                     tracelist1.append(str(int(rtt)) + 'ms')
-                    tracelist1.append(str(addr[0])
+                    tracelist1.append(str(addr[0]))
                     tracelist1.append(str(dest))
                     tracelist2.append(tracelist1)
                     
@@ -124,7 +124,7 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
                     tracelist1.append(str(int(rtt)) + 'ms')
-                    tracelist1.append(str(addr[0])
+                    tracelist1.append(str(addr[0]))
                     tracelist1.append(str(dest))
                     tracelist2.append(tracelist1)
                    
@@ -133,7 +133,7 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
                     tracelist1.append(str(int(rtt)) + 'ms')
-                    tracelist1.append(str(addr[0])
+                    tracelist1.append(str(addr[0]))
                     tracelist1.append(str(dest))
                     tracelist2.append(tracelist1)
                     if packetID == ID:
@@ -143,7 +143,7 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     rtt = (timeReceived - timeSent) * 1000
                     tracelist1.append(str(int(rtt)) + 'ms')
-                    tracelist1.append(str(addr[0])
+                    tracelist1.append(str(addr[0]))
                     tracelist1.append(str(dest))
                     tracelist2.append(tracelist1)
                   

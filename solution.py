@@ -135,8 +135,7 @@ def get_route(hostname):
                     tracelist1.append(str(addr[0]))
                     tracelist1.append(str(dest))
                     tracelist2.append(tracelist1)
-                    
-                        return tracelist2
+                    return tracelist2
 
                 else:
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
@@ -149,7 +148,7 @@ def get_route(hostname):
                 break
             finally:
                 mySocket.close()
-                
     return tracelist2
                 
+   
 

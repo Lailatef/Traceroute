@@ -58,12 +58,14 @@ def build_packet():
 
 def get_route(hostname):
     timeLeft = TIMEOUT
+    tracelist1 = []
     tracelist2 = []
 
     for ttl in range(1, MAX_HOPS):
+        tracelist1 = []
+        tracelist1.append(str(ttl))
         for tries in range(TRIES):
-            tracelist1 = []
-            tracelist1.append(str(ttl))
+            
             destAddr = gethostbyname(hostname)
 
             icmp = getprotobyname("icmp")
@@ -106,7 +108,7 @@ def get_route(hostname):
                       
                 except herror:
                     
-                    dest = ["Hostname not returnable"]
+                    dest = "Hostname not returnable"
                     
 
                 if types == 11:
